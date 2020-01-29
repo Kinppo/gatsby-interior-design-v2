@@ -9,7 +9,7 @@ import PortfolioLayout from "../Layouts/PortfolioLayout"
 import AboutLayout from "../Layouts/AboutLayout"
 import ContactLayout from "../Layouts/ContactLayout"
 import disableBrowserBackButton from "disable-browser-back-navigation"
-disableBrowserBackButton()
+
 const Container = styled.div`
   .flexbox {
     display: flex;
@@ -35,13 +35,6 @@ export default function IndexPage() {
     setSection(value)
   }
   useEffect(() => {
-    window.history.forward()
-    window.onunload = function() {
-      console.log("ddd")
-    }
-
-    window.onhashchange = function() {}
-
     if (window.innerWidth <= 766) {
       console.log(window.innerWidth)
       document.querySelector(".flex-item-0").style.display = "none"

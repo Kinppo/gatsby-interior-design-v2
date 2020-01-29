@@ -11,7 +11,7 @@ exports.onRenderBody = ({ setPostBodyComponents }) => {
     <script
       dangerouslySetInnerHTML={{
         __html: `
-        console.log("Welcome To Our Website")
+        disableBrowserBackButton()
        `,
       }}
     />,
