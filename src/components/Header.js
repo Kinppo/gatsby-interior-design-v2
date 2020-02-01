@@ -4,8 +4,9 @@ import styled from "styled-components"
 import Hamburger from "./elements/Hamburger"
 import SideBar from "./SideBar"
 const Container = styled.div`
+  font-family: "ibm regular";
   ul {
-    margin: 2em 2em 0em 0em;
+    margin: 2em 2rem 0em 0em;
   }
   .nav-item,
   .hamburger-item,
@@ -16,7 +17,7 @@ const Container = styled.div`
     background: transparent;
     color: ${props => (props.color ? props.color : "#836755")};
     padding: 0px;
-    font-size: 18px;
+    font-size: 16px;
     margin: 0em 2em;
     border-bottom: 1px solid transparent;
     transition: all 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955);

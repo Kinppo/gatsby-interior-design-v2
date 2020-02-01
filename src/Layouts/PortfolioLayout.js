@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
 import styled from "styled-components"
 import img1 from "../assets/img/img11.jpg"
 import img2 from "../assets/img/img10.jpg"
@@ -121,6 +120,13 @@ const Container = styled.div`
   .card-btn-5 {
     background-image: url(${img5});
   }
+  .fsm{
+    transition: all 0.7s;
+  }
+  .hidden-item {
+    position: absolute;
+    top: 0px;
+  }
   @media only screen and (max-width: 500px) {
     h1 {
       font-size: 48px;
@@ -128,16 +134,65 @@ const Container = styled.div`
   }
 `
 export default function PortfolioLayout() {
+
+var openFSM = function(target, loc, number) {
+  var $fsmActual = document.getElementById('fsm_actual')
+  $fsmActual.style.position = "absolute";
+  var position = {};
+  var size = {};
+  var $this = document.querySelector(`.${target}`);
+	position = $this.getBoundingClientRect();
+	size = {
+		width: window.getComputedStyle($this).width,
+		height: window.getComputedStyle($this).height
+	}
+	
+  $fsmActual.style.transition= `all 0.7s`
+  $fsmActual.style.backgroundImage= `url(${number})`
+	$fsmActual.style.position = "absolute";
+	$fsmActual.style.top = position.top + 'px';
+	$fsmActual.style.left = position.left + 'px';
+	$fsmActual.style.height = size.height;
+	$fsmActual.style.width = size.width;
+	$fsmActual.style.margin = $this.style.margin;
+  
+  document.querySelector(`.hidden-item`).scrollIntoView()
+
+	setTimeout(function(){
+		$fsmActual.innerHTML = $this.innerHTML;
+		var classes = $this.classList.value.split(' ');
+		for (var i = 0; i < classes.length; i++) {
+			$fsmActual.classList.add(classes[i]);
+		}
+		$fsmActual.classList.add('growing');
+		$fsmActual.style.height = '100vh';
+		$fsmActual.style.width = '100vw';
+		$fsmActual.style.top = '0';
+		$fsmActual.style.left = '0';
+		$fsmActual.style.margin = '0';
+	}, 1);
+	
+	setTimeout(function(){
+		$fsmActual.classList.remove('growing');
+		$fsmActual.classList.add('full-screen')
+  }, 700);
+  
+  setTimeout(function(){
+    window.location.replace(`https://gatsby-sanity-interior-design.netlify.com/${loc}`);
+	}, 700);
+};
+
+
   return (
     <div className="warapper">
       <Container className="myContainer">
+      <h6 className="hidden-item"></h6>
+        <div id="fsm_actual"/>
         <h1 className="title">PORTFOLIO</h1>
         <h6>Our best work</h6>
         <div className="portfolio-cards">
-          <div className="portfolio-card">
-            <Link to="./kitchen">
-              <button className="card-btn card-btn-1"></button>
-            </Link>
+          <div className="fsm portfolio-card">
+              <button className="card-btn card-btn-1"  onClick={()=> openFSM("card-btn-1", "kitchen", img1)}></button>
             <div className="portfolio-title">
               <h4>Kitchens</h4>
               <hr />
@@ -147,10 +202,8 @@ export default function PortfolioLayout() {
               </div>
             </div>
           </div>
-          <div className="portfolio-card">
-            <Link to="./bathroom">
-              <button className="card-btn card-btn-2"></button>
-            </Link>
+          <div className="fsm portfolio-card">
+              <button className="card-btn card-btn-2" onClick={()=> openFSM("card-btn-2", "bathroom", img2)}></button>
             <div className="portfolio-title">
               <h4>Bathrooms</h4>
               <hr />
@@ -160,10 +213,10 @@ export default function PortfolioLayout() {
               </div>
             </div>
           </div>
-          <div className="portfolio-card">
-            <Link to="./bedroom">
-              <button className="card-btn card-btn-3"></button>
-            </Link>
+          <div className="fsm portfolio-card">
+            
+              <button className="card-btn card-btn-3" onClick={()=> openFSM("card-btn-3", "bedroom", img3)}></button>
+            
             <div className="portfolio-title">
               <h4>Bedrooms</h4>
               <hr />
@@ -173,10 +226,10 @@ export default function PortfolioLayout() {
               </div>
             </div>
           </div>
-          <div className="portfolio-card">
-            <Link to="./living-room">
-              <button className="card-btn card-btn-4"></button>
-            </Link>
+          <div className="fsm portfolio-card">
+            
+              <button className="card-btn card-btn-4" onClick={()=> openFSM("card-btn-4", "living-room", img4)}></button>
+            
             <div className="portfolio-title">
               <h4>Living rooms</h4>
               <hr />
@@ -186,10 +239,10 @@ export default function PortfolioLayout() {
               </div>
             </div>
           </div>
-          <div className="portfolio-card">
-            <Link to="./dining-room">
-              <button className="card-btn card-btn-5"></button>
-            </Link>
+          <div className="fsm portfolio-card">
+            
+              <button className="card-btn card-btn-5" onClick={()=> openFSM("card-btn-5", "dining-room", img5)}></button>
+            
             <div className="portfolio-title">
               <h4>Dining rooms</h4>
               <hr />

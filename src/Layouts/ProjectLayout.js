@@ -12,39 +12,37 @@ const Container = styled.div`
     position: absolute;
     top: 0;
     z-index: 2;
-    right: 2em;
+    right: 0rem;
   }
   .showcase {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    min-width: 330px;
-    width: 30vw;
-    height: 380px;
-    margin: 4em 0em;
+    width: 100vw;
+    height: 100vh;
+    margin: 0em;
     transform-origin: right bottom;
-    transition: 0.7s;
     z-index: -1;
     color: #fff;
-    max-width: 2000px;
-    max-height: 100vh;
     z-index: -1;
     text-align: center;
-    transition: all 1s;
+    background-size: cover;
+    background-position: center;
   }
   h1 {
     text-transform: uppercase;
     text-align: center;
-    font-size: 24px;
+    font-size: 64px;
     font-weight: 700;
+    margin-top: -1em;
     font-family: "Montserrat", sans-serif;
   }
   h6 {
     text-align: center;
-    font-size: 6px;
+    font-size: 24px;
     margin-bottom: 5em;
-    font-weight: 600;
+    font-weight: 500;
   }
   h2 {
     font-family: "Montserrat", sans-serif;
@@ -61,6 +59,7 @@ const Container = styled.div`
     }
     h1 {
       font-size: 64px;
+      margin-top: 0;
       color: #fff;
       transition: all 0.4s;
       line-height: 1;
@@ -72,7 +71,7 @@ const Container = styled.div`
   }
   .description {
     margin: auto;
-    margin-top: 120vh;
+    margin-top: 5vh;
     max-width: 700px;
     padding: 10em 0em;
     h2 {
@@ -158,32 +157,6 @@ const Container = styled.div`
 
 export default function ProjectLayout({ data }) {
   useEffect(() => {
-    var currentWidth = document.querySelector(".showcase").offsetWidth
-    var currentHeight = document.querySelector(".showcase").offsetHeight
-    var availableHeight = window.innerHeight
-    var availableWidth = window.innerWidth
-    var scaleX = availableWidth / currentWidth
-    var scaleY = availableHeight / currentHeight
-    var translationX = Math.round((availableWidth - currentWidth * scaleX) / 2)
-    var translationY = Math.round(
-      (availableHeight - currentHeight * scaleY) / 2
-    )
-    document.querySelector(`.showcase`).style.margin = "0"
-    document.querySelector(`.showcase`).style.position = "absolute"
-    document.querySelector(`.showcase`).style.transform =
-      "translate(" +
-      translationX +
-      "px, " +
-      translationY +
-      "px) scale(" +
-      scaleX +
-      ", " +
-      scaleY +
-      ")"
-    document.querySelector(`.showcase`).style.bottom = "0"
-    document.querySelector(`.showcase`).style.right = "0"
-    document.querySelector(`.showcase`).style.backgroundSize = "cover"
-    document.querySelector(`.showcase`).style.backgroundPosition = "center"
     setTimeout(() => {
       document
         .querySelector(`.hidden-item`)
@@ -191,27 +164,30 @@ export default function ProjectLayout({ data }) {
     }, 1100)
   })
 
-  const handleBg = e => {
-    if (-e.nativeEvent.offsetX > -90) {
-      document.querySelector(".showcase").style.backgroundPositionX =
-        -e.nativeEvent.offsetX + "px"
-    }
-  }
   return (
     <Container>
       <div className="header-wrapper">
-        <Header color="#FFF" action={true} />
+        <Header  action={true} />
       </div>
       <div
         className="showcase"
-        onMouseMove={handleBg}
         style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${data.sanityProject.mainImage.asset.fixed.src})`,
+          backgroundImage: `url(${data.sanityProject.mainImage.asset.fixed.src})`,
         }}
       >
         <h6 className="hidden-item"></h6>
-        <h1>{data.sanityProject.title}</h1>
-        <p>Explore more</p>
+        <h1
+        className="title"
+        data-sal="slide-up"
+        data-sal-duration="1300"
+        data-sal-delay="300"
+        data-sal-easing="ease">{data.sanityProject.title}</h1>
+        <p
+        className="title"
+        data-sal="slide-up"
+        data-sal-duration="1300"
+        data-sal-delay="300"
+        data-sal-easing="ease">Explore more</p>
       </div>
       <div className="description">
         <h2>{data.sanityProject.descriptionTitle}</h2>
