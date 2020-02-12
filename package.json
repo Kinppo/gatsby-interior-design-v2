@@ -3,7 +3,7 @@
   "private": true,
   "description": "Metro Floring & Interior Design",
   "version": "0.1.0",
-  "author": "Mouaad Boukiaou <boukiaou.mouaad@gmail.com>",
+  "author": "MBK",
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.6",
     "bootstrap": "^4.4.1",
