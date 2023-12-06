@@ -76,7 +76,6 @@ const Wrapper = styled.div`
     background-position: center;
     background-repeat: no-repeat;
     border-radius: 50%;
-    background-image: url("https://iglucraft.com/wp-content/uploads/2018/04/IMG_20170517_162412_718.jpg");
   }
   .team-div {
     padding: 50px 50px;
@@ -98,6 +97,7 @@ const Wrapper = styled.div`
     -ms-overflow-style: none;
     margin-top: 3%;
   }
+
   .contact-team-col::-webkit-scrollbar {
     display: none;
   }
@@ -121,6 +121,9 @@ const Wrapper = styled.div`
       .contact-team-col {
         margin-top: 0em;
       }
+    }
+    .contact-intro-img {
+      width: 100%;
     }
   }
 `;
