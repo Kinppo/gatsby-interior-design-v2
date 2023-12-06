@@ -26,6 +26,11 @@ const Container = styled.div`
   .flex-item-1::-webkit-scrollbar {
     display: none;
   }
+  @media only screen and (max-width: 766px) {
+    .flexbox {
+      width: 100%;
+    }
+  }
 `;
 
 export default function IndexPage() {
