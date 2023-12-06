@@ -1,16 +1,16 @@
-import React, { Component } from "react"
-import Landingpage from "../components/Landingpage"
-import MyCarousel from "../components/MyCarousel"
-import styled from "styled-components"
-import InfoSection from "../components/InfoSection"
-import Button from "../components/elements/Button"
-import Footer from "../components/Footer"
-import img1 from "../assets/img/img1.jpg"
-import img2 from "../assets/img/img2.jpg"
-import img3 from "../assets/img/img3.jpg"
-import img4 from "../assets/img/img_mobilehome_pillar_01.svg"
-import img5 from "../assets/img/img_mobilehome_pillar_02.svg"
-import img6 from "../assets/img/img_mobilehome_pillar_03.svg"
+import React, { Component } from "react";
+import Landingpage from "../components/Landingpage";
+import MyCarousel from "../components/MyCarousel";
+import styled from "styled-components";
+import InfoSection from "../components/InfoSection";
+import Button from "../components/elements/Button";
+import Footer from "../components/Footer";
+import img1 from "../assets/img/img1.jpg";
+import img2 from "../assets/img/img2.jpg";
+import img3 from "../assets/img/img3.jpg";
+import img4 from "../assets/img/img_mobilehome_pillar_01.svg";
+import img5 from "../assets/img/img_mobilehome_pillar_02.svg";
+import img6 from "../assets/img/img_mobilehome_pillar_03.svg";
 
 const Container = styled.div`
   transition: all 1s;
@@ -36,6 +36,9 @@ const Container = styled.div`
     transition: all 1s;
     transition-delay: 1s;
     height: 100%;
+  }
+  .section {
+    padding: 0 !important;
   }
   .info {
     height: 100%;
@@ -105,62 +108,62 @@ const Container = styled.div`
   .mobile-icon {
     margin-right: 3em;
   }
-`
+`;
 export default class DefaultLayout extends Component {
   constructor(props) {
-    super(props)
-    this.state = { content: 0, type: "down", scrollState: 1 }
-    this.handleKey = this.handleKey.bind(this)
-    this.handleState = this.handleState.bind(this)
-    this.handleScrool = this.handleScrool.bind(this)
-    this.updateSrollState = this.updateSrollState.bind(this)
-    this.resetState = this.resetState.bind(this)
+    super(props);
+    this.state = { content: 0, type: "down", scrollState: 1 };
+    this.handleKey = this.handleKey.bind(this);
+    this.handleState = this.handleState.bind(this);
+    this.handleScrool = this.handleScrool.bind(this);
+    this.updateSrollState = this.updateSrollState.bind(this);
+    this.resetState = this.resetState.bind(this);
   }
   resetState() {
     this.setState({
       content: 0,
       type: "down",
-    })
+    });
   }
   handleState() {
     this.setState({
       content: this.state.content + 1,
       type: "down",
-    })
+    });
   }
   handleKey(event) {
     if (event.keyCode === 40 && this.state.scrollState) {
       if (this.state.content !== 3) {
-        this.setState({ content: this.state.content + 1, type: "down" })
+        this.setState({ content: this.state.content + 1, type: "down" });
       }
     } else if (event.keyCode === 38 && this.state.scrollState) {
       if (this.state.content !== 0) {
-        this.setState({ content: this.state.content - 1, type: "up" })
+        this.setState({ content: this.state.content - 1, type: "up" });
       }
     }
   }
   handleScrool(event) {
     if (event.deltaY === 100 && this.state.scrollState) {
       if (this.state.content !== 3) {
-        this.setState({ content: this.state.content + 1, type: "down" })
+        this.setState({ content: this.state.content + 1, type: "down" });
       }
     } else if (event.deltaY === -100 && this.state.scrollState) {
       if (this.state.content !== 0) {
-        this.setState({ content: this.state.content - 1, type: "up" })
+        this.setState({ content: this.state.content - 1, type: "up" });
       }
     }
   }
   updateSrollState() {
     if (window.innerWidth <= 766) {
-      this.setState({ scrollState: 0 })
+      this.setState({ scrollState: 0 });
     } else {
-      this.setState({ scrollState: 1 })
+      this.setState({ scrollState: 1 });
     }
   }
   componentDidMount() {
-    this.updateSrollState()
-    document.addEventListener("keydown", this.handleKey, false)
-    window.addEventListener("resize", this.updateSrollState.bind(this))
+    this.updateSrollState();
+    document.addEventListener("keydown", this.handleKey, false);
+    window.addEventListener("resize", this.updateSrollState.bind(this));
   }
   componentWillUnmount() {}
   render() {
@@ -242,18 +245,20 @@ export default class DefaultLayout extends Component {
             <h3>KITCHENS</h3>
             <h5>Stunning Natural Stone Kitchens</h5>
             <h6>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book. It has
-              survived not only five centuries, but also the leap into
-              electronic typesetting, remaining essentially unchanged.
+              Elevate your culinary haven with our bespoke kitchen interior
+              design service. We specialize in creating functional and
+              aesthetically pleasing kitchen spaces that seamlessly blend modern
+              design with practicality. From personalized cabinetry and
+              innovative storage solutions to carefully curated color schemes,
+              our team transforms kitchens into stylish, efficient, and inviting
+              spaces that cater to your unique lifestyle and culinary
+              preferences.
             </h6>
             <p>
-              It was popularised in the 1960s with the release of Letraset
-              sheets containing Lorem Ipsum passages, and more recently with
-              desktop publishing software like Aldus PageMaker including
-              versions of Lorem Ipsum.
+              Unleash the potential of your kitchen with our expert interior
+              design. From sleek cabinetry to innovative layouts, our service
+              combines style and efficiency for a culinary space that reflects
+              your taste and enhances functionality.
             </p>
             <Button>View all kitchens</Button>
           </div>
@@ -262,18 +267,21 @@ export default class DefaultLayout extends Component {
             <h3>BATHROOMS</h3>
             <h5>Stunning Natural Stone bathrooms</h5>
             <h6>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book. It has
-              survived not only five centuries, but also the leap into
-              electronic typesetting, remaining essentially unchanged.
+              Indulge in the luxury of a thoughtfully designed bathroom
+              sanctuary with our expert interior design service. We focus on
+              crafting bathrooms that harmonize functionality with elegance,
+              offering tailored solutions for optimal space utilization. From
+              contemporary fixtures to spa-inspired elements, our designs
+              combine sophistication and comfort, providing a rejuvenating
+              retreat within the confines of your home. Discover the perfect
+              balance of style and practicality in our bespoke bathroom interior
+              designs.
             </h6>
             <p>
-              It was popularised in the 1960s with the release of Letraset
-              sheets containing Lorem Ipsum passages, and more recently with
-              desktop publishing software like Aldus PageMaker including
-              versions of Lorem Ipsum.
+              Experience luxury at its finest with our bathroom interior design.
+              From chic fixtures to space-maximizing layouts, we create a
+              spa-like retreat tailored to your style, bringing opulence and
+              comfort seamlessly into your home.
             </p>
             <Button>View all bathrooms</Button>
           </div>
@@ -286,6 +294,6 @@ export default class DefaultLayout extends Component {
           resetState={this.resetState}
         />
       </Container>
-    )
+    );
   }
 }

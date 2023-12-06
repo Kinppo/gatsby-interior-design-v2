@@ -8,7 +8,6 @@ import styled from "styled-components"
 import PortfolioLayout from "../Layouts/PortfolioLayout"
 import AboutLayout from "../Layouts/AboutLayout"
 import ContactLayout from "../Layouts/ContactLayout"
-import disableBrowserBackButton from "disable-browser-back-navigation"
 
 const Container = styled.div`
   .flexbox {

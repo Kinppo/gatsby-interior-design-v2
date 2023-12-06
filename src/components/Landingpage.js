@@ -1,9 +1,10 @@
-import React from "react"
-import img1 from "../assets/img/img1.jpg"
-import img2 from "../assets/img/img2.jpg"
-import img3 from "../assets/img/img3.jpg"
-import icon1 from "../assets/img/icon_scroll_light.svg"
-import styled from "styled-components"
+import React from "react";
+import img1 from "../assets/img/img1.jpg";
+import img2 from "../assets/img/img2.jpg";
+import img3 from "../assets/img/img3.jpg";
+import icon1 from "../assets/img/icon_scroll_light.svg";
+import styled from "styled-components";
+
 const Container = styled.div`
   width: 100%;
   .bg {
@@ -65,7 +66,7 @@ const Container = styled.div`
       font-size: 18px;
     }
   }
-`
+`;
 
 function Landingpage({ content, type, setContent }) {
   return (
@@ -120,7 +121,7 @@ function Landingpage({ content, type, setContent }) {
         />
       </div>
     </Container>
-  )
+  );
 }
 
-export default Landingpage
+export default Landingpage;

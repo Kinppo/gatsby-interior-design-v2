@@ -1,5 +1,5 @@
-import React from "react"
-import styled from "styled-components"
+import React from "react";
+import styled from "styled-components";
 const Container = styled.div`
   color: #fff;
   width: 100vw !important;
@@ -21,34 +21,32 @@ const Container = styled.div`
       text-align: center;
     }
   }
-`
+`;
 function CustomFooter() {
   return (
     <Container>
       <footer className="footer">
         <div className="d-flex footer-flexbox">
           <div className="p-2">
-            <p>&copy; 2020</p>
+            <p>&copy; 2024</p>
             <p>Metro floring & Interior design</p>
           </div>
           <div className="p-2">
-            <p>Link 1 </p>
-            <p>Link 2 </p>
-            <p>Link 3 </p>
-            <p>Link 4 </p>
+            <p>Home </p>
           </div>
           <div className="p-2">
-            <p>Link 1 </p>
-            <p>Link 2 </p>
+            <p>Works </p>
           </div>
           <div className="p-2">
-            <p>Link 1 </p>
-            <p>Link 2 </p>
+            <p>About </p>
+          </div>
+          <div className="p-2">
+            <p>Contact </p>
           </div>
         </div>
       </footer>
     </Container>
-  )
+  );
 }
 
-export default CustomFooter
+export default CustomFooter;

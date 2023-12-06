@@ -1,6 +1,14 @@
-import React from "react"
-import { Container, Col } from "react-bootstrap"
-import styled from "styled-components"
+import React from "react";
+import { Container, Col } from "react-bootstrap";
+import styled from "styled-components";
+import img from "../assets/img/bgc-min.png";
+import img1 from "../assets/img/m1-min.png";
+import img2 from "../assets/img/m2-min.png";
+import img3 from "../assets/img/m3-min.png";
+import img4 from "../assets/img/m4-min.png";
+import img5 from "../assets/img/m5-min.png";
+import img6 from "../assets/img/m6-min.png";
+import img7 from "../assets/img/m7-min.png";
 
 const Wrapper = styled.div`
   color: #333;
@@ -11,7 +19,7 @@ const Wrapper = styled.div`
     background-repeat: no-repeat;
     background-position: center;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-      url("https://iglucraft.com/wp-content/uploads/2018/04/cluster.jpg");
+      url(${img});
     position: relative;
     display: flex;
     justify-content: center;
@@ -115,7 +123,7 @@ const Wrapper = styled.div`
       }
     }
   }
-`
+`;
 
 const ContactLayout = () => {
   return (
@@ -148,54 +156,84 @@ const ContactLayout = () => {
             <h1>Our Team</h1>
             <div className="team-div d-flex flex-wrap  justify-content-between">
               <Col className="contact-team">
-                <div className="member-team-image" />
-                <p className="contact-rank">SALES</p>
-                <p className="contact-name">Maarian Toom</p>
+                <div
+                  className="member-team-image"
+                  style={{ backgroundImage: `url(${img1})` }}
+                />
+                <p className="contact-rank">CEO</p>
+                <p className="contact-name">Pete Gord</p>
                 <p className="contact-number">+372 5645 7211</p>
-                <p className="contact-email">maarian@iglucraft.com</p>
+                <p className="contact-email">gord@iglucraft.com</p>
               </Col>
               <Col className="contact-team">
-                <div className="member-team-image" />
-                <p className="contact-rank">SALES</p>
-                <p className="contact-name">Maarian Toom</p>
+                <div
+                  className="member-team-image"
+                  style={{ backgroundImage: `url(${img2})` }}
+                />
+                <p className="contact-rank">CTO</p>
+                <p className="contact-name">Sondra Kitty</p>
                 <p className="contact-number">+372 5645 7211</p>
-                <p className="contact-email">maarian@iglucraft.com</p>
+                <p className="contact-email">kitty@iglucraft.com</p>
               </Col>
               <Col className="contact-team">
-                <div className="member-team-image" />
-                <p className="contact-rank">SALES</p>
-                <p className="contact-name">Maarian Toom</p>
+                <div
+                  className="member-team-image"
+                  style={{ backgroundImage: `url(${img3})` }}
+                />
+                <p
+                  className="contact-rank"
+                  style={{
+                    overflow: "hidden",
+                    textOverflow: "ellipsis",
+                    whiteSpace: "nowrap",
+                  }}
+                >
+                  Interior Designer
+                </p>
+                <p className="contact-name">Dell Miles</p>
                 <p className="contact-number">+372 5645 7211</p>
-                <p className="contact-email">maarian@iglucraft.com</p>
+                <p className="contact-email">miles@iglucraft.com</p>
               </Col>
               <Col className="contact-team">
-                <div className="member-team-image" />
-                <p className="contact-rank">SALES</p>
-                <p className="contact-name">Maarian Toom</p>
+                <div
+                  className="member-team-image"
+                  style={{ backgroundImage: `url(${img4})` }}
+                />
+                <p className="contact-rank">Enginner</p>
+                <p className="contact-name">Patricia Kayly</p>
                 <p className="contact-number">+372 5645 7211</p>
-                <p className="contact-email">maarian@iglucraft.com</p>
+                <p className="contact-email">kayly@iglucraft.com</p>
               </Col>
               <Col className="contact-team">
-                <div className="member-team-image" />
+                <div
+                  className="member-team-image"
+                  style={{ backgroundImage: `url(${img5})` }}
+                />
                 <p className="contact-rank">SALES</p>
-                <p className="contact-name">Maarian Toom</p>
+                <p className="contact-name">Ramsey Hale</p>
                 <p className="contact-number">+372 5645 7211</p>
-                <p className="contact-email">maarian@iglucraft.com</p>
+                <p className="contact-email">hale@iglucraft.com</p>
               </Col>
               <Col className="contact-team">
-                <div className="member-team-image" />
+                <div
+                  className="member-team-image"
+                  style={{ backgroundImage: `url(${img6})` }}
+                />
                 <p className="contact-rank">SALES</p>
-                <p className="contact-name">Maarian Toom</p>
+                <p className="contact-name">Cynthia Gae</p>
                 <p className="contact-number">+372 5645 7211</p>
-                <p className="contact-email">maarian@iglucraft.com</p>
+                <p className="contact-email">gae@iglucraft.com</p>
               </Col>
               <Col
                 md={12}
                 className="contact-team"
                 style={{ paddingBottom: "2em" }}
               >
-                <div className="member-team-image" />
-                <p className="contact-rank">SALES</p>
+                <div
+                  className="member-team-image"
+                  style={{ backgroundImage: `url(${img7})` }}
+                />
+                <p className="contact-rank">Management</p>
                 <p className="contact-name">Maarian Toom</p>
                 <p className="contact-number">+372 5645 7211</p>
                 <p className="contact-email">maarian@iglucraft.com</p>
@@ -205,6 +243,6 @@ const ContactLayout = () => {
         </div>
       </Container>
     </Wrapper>
-  )
-}
-export default ContactLayout
+  );
+};
+export default ContactLayout;

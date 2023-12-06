@@ -1,9 +1,10 @@
-import React from "react"
-import img1 from "../assets/img/img7.jpg"
-import img2 from "../assets/img/img9.jpg"
-import img3 from "../assets/img/img8.jpg"
-import styled from "styled-components"
-import "../style/animatedBorder.scss"
+import React from "react";
+import img1 from "../assets/img/img7.jpg";
+import img2 from "../assets/img/img9.jpg";
+import img3 from "../assets/img/img8.jpg";
+import styled from "styled-components";
+import "../style/animatedBorder.scss";
+
 const Container = styled.div`
   position: absolute;
   top: 0;
@@ -92,7 +93,7 @@ const Container = styled.div`
       margin-bottom: 0.8em;
     }
   }
-`
+`;
 function Footer({ content, scrollState, changeSection, resetState }) {
   return (
     <Container
@@ -112,8 +113,8 @@ function Footer({ content, scrollState, changeSection, resetState }) {
       >
         <a
           onClick={() => {
-            changeSection(1)
-            resetState()
+            changeSection(1);
+            resetState();
           }}
         >
           <div className="bg bg1">
@@ -144,8 +145,8 @@ function Footer({ content, scrollState, changeSection, resetState }) {
       >
         <a
           onClick={() => {
-            changeSection(2)
-            resetState()
+            changeSection(2);
+            resetState();
           }}
         >
           <div className="bg bg2">
@@ -176,8 +177,8 @@ function Footer({ content, scrollState, changeSection, resetState }) {
       >
         <a
           onClick={() => {
-            changeSection(3)
-            resetState()
+            changeSection(3);
+            resetState();
           }}
         >
           <div className="bg bg3">
@@ -198,7 +199,7 @@ function Footer({ content, scrollState, changeSection, resetState }) {
         </a>
       </div>
     </Container>
-  )
+  );
 }
 
-export default Footer
+export default Footer;

@@ -1,16 +1,16 @@
-import React from "react"
-import { Carousel } from "react-bootstrap"
-import styled from "styled-components"
-import img1 from "../assets/img/img4.jpg"
-import img2 from "../assets/img/img5.jpg"
-import img3 from "../assets/img/img6.jpg"
+import React from "react";
+import { Carousel } from "react-bootstrap";
+import styled from "styled-components";
+import img1 from "../assets/img/img4.jpg";
+import img2 from "../assets/img/img5.jpg";
+import img3 from "../assets/img/img6.jpg";
 
 function MyCarousel({ content, type }) {
   content === 0 && type === "up"
     ? setTimeout(() => {
-        document.querySelector(".carousel").style.zIndex = "0"
+        document.querySelector(".carousel").style.zIndex = "0";
       }, 1000)
-    : console.log()
+    : console.log();
   const Container = styled.div`
     height: 100%;
     .carousel {
@@ -42,7 +42,7 @@ function MyCarousel({ content, type }) {
     .carousel-inner {
       height: 100%;
     }
-  `
+  `;
   return (
     <Container>
       <Carousel
@@ -53,25 +53,25 @@ function MyCarousel({ content, type }) {
       >
         <Carousel.Item className="carousel-item carousel-item-1">
           <Carousel.Caption>
-            <h3>First Slide Label</h3>
+            <h3>15 + YEARS EXPERIENCE</h3>
             <h5>Nulla vitae elit libero, a pharetra augue mollis interdum.</h5>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item className="carousel-item carousel-item-2">
           <Carousel.Caption>
-            <h3>Second Slide Label</h3>
+            <h3>IT’S THE EMOTIONS</h3>
             <h5>Nulla vitae elit libero, a pharetra augue mollis interdum.</h5>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item className="carousel-item carousel-item-3">
           <Carousel.Caption>
-            <h3>Third Slide Label</h3>
+            <h3>The Real Interior Design</h3>
             <h5>Nulla vitae elit libero, a pharetra augue mollis interdum.</h5>
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
     </Container>
-  )
+  );
 }
 
-export default MyCarousel
+export default MyCarousel;
